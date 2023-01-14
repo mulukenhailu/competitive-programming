@@ -1,0 +1,4 @@
+from itertools import groupby
+data =str(input())
+for k, g in groupby(data):
+    print(f"({len(list(g))}, {k})", end=" ")
