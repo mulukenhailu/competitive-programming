@@ -1,0 +1,18 @@
+def encode(strs):
+    encode=""
+    for word in strs:
+        encode=encode+word+":;"
+    return encode
+def deocode(srt):
+    temp=""
+    decodetemp=[]
+    decode=[]
+    for letter in srt:
+        if letter != ";":
+            temp+=letter
+        else:
+            decodetemp.append(temp)
+            temp=""
+    for word in decodetemp:
+        decode.append(word[:-1])
+    return decode    
