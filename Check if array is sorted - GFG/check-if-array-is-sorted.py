@@ -4,13 +4,13 @@ class Solution:
     def arraySortedOrNot(self, arr, n):
         left=0
         right=1
-        while right<=len(arr)-1:
-            if arr[left]>arr[right]:
+        for _ in  range(n-1):
+            if arr[left]<=arr[right]:
+                left+=1
+                right+=1
+            else:
                 return False
-            left +=1
-            right +=1
         return True
-            
 
 
 #{ 
