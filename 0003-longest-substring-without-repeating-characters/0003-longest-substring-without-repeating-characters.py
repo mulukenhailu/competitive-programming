@@ -9,5 +9,5 @@ class Solution:
                 i+=1
             dic[s[j]]=j
             res=max(res, j-i+1)
-        return res
+        return res# time O(n) space O(n)
               
