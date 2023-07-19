@@ -14,5 +14,5 @@ class Solution:
                 p1+=1
             elif nums[p1]+nums[p2]>k:
                 p2-=1
-        return ans
+        return ans   # Time O(n)  space  O(n)
                 
