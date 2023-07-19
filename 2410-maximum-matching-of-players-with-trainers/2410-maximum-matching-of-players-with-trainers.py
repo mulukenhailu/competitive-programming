@@ -13,5 +13,5 @@ class Solution:
                 p2+=1
             else:
                 p1+=1
-        return ans
+        return ans  # time O(nlogn) space O(1)
                 
