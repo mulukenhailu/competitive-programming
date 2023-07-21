@@ -11,5 +11,5 @@ class Solution:
             sc[s[i]] += 1
         if sc == pc:
             ans.append(len(s) - len(p))
-        return ans
+        return ans #time O(m*n)  space O(m+n)
         
