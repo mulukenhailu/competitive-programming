@@ -18,8 +18,19 @@ class Solution:
         time=0
         for pile in piles:
             time+=math.ceil(pile/mid)
-        return time
+        return time             #timme O(logn)  space O(1)
 
+    # l=1, r=11....true
+    # m=6 p=1+1+2+2=6<h=8 
+    # l=1, r=5......true
+    # m=3 p=1+2+3+4=10>h=8
+    # l=4, r=5......true
+    # m=4, p=1+2+2+3=h=8
+    # l=4, r=4.......true
+    # m=4, p=1+2+2+3=h=8
+    # l=4, r=3.....False
+    # return >>>>l=4         
+    
             
 
 
@@ -31,53 +42,5 @@ class Solution:
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-#         poss_k=[i for i in range(min(piles), max(piles)+1)]
-#         for i in poss_k:
-#             time=0
-#             for pile in piles:
-#                 if i==pile or pile%i==0:
-#                     time+=(pile)/i
-#                 else:
-#                     time+=((pile)//i)+1
-#         return int(time)
-    
-    
-    
-    
-    
-    
-    
-    #     if len(piles)==h:
-    #         return max(piles)
-    #     poss_k=[i for i in range(min(piles), max(piles)+1)]
-    #     low=0
-    #     high=len(poss_k)-1
-    #     while low<= high:
-    #         mid=(low+high)//2
-    #         time=0
-    #         for pile in piles:
-    #             if poss_k[mid]==pile:
-    #                 time+=(pile)/poss_k[mid]
-    #             else:
-    #                 time+=(pile)//poss_k[mid]+1
-    #         if time==h:
-    #             return poss_k[mid]
-    #         elif time<h:
-    #             high=mid-1
-    #         elif time>h:
-    #             low=mid-1
-        
+ 
         
