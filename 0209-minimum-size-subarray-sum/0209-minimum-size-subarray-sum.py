@@ -17,7 +17,7 @@ class Solution:
         if min_len==float("inf"):
             return 0
         else:
-            return min_len
+            return min_len  # time O(n)  space O(1)
         
         
                 
