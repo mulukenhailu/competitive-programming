@@ -6,7 +6,7 @@ class Solution:
         if n == 1:
             return 1
         while r < n:
-            while l < n - 1 and arr[l] == arr[l+1]:  # to handle duplicates
+            while l < n - 1 and arr[l] == arr[l+1]: 
                 l += 1
             while r < n - 1 and (arr[r-1] > arr[r] < arr[r+1] or arr[r-1] < arr[r] > arr[r+1]):                           
                 r += 1
