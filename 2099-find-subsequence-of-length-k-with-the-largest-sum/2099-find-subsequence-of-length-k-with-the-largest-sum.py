@@ -1,15 +1,12 @@
 class Solution:
     def maxSubsequence(self, nums: List[int], k: int) -> List[int]:
-        # heap=[]
-        # ans=[]
-        # for num in nums:
-        #     heapq.heappush(heap, -num)
-        # for _ in range(k):
-        #     p=heapq.heappop(heap)
-        #     ans.append(-p)
-        # return ans
-        while len(nums) > k:
-            nums.remove(min(nums))
-        return nums
-    
-        
+        heap=[]
+        ans=[]
+        for i, num  in enumerate(nums):
+            heappush(heap, (num, i))
+            if len(heap)>k:
+                heappop(heap)
+        heap.sort(key=lambda x :x[1])
+        for t in heap:
+            ans.append(t[0])
+        return ans
