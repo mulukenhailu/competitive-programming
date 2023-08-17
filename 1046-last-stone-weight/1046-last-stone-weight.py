@@ -5,20 +5,14 @@ class Solution:
         # 11 12
         # 1 11
         # 1
-        
-        while True:
-            if len(stones)==1:
-                return stones[0]
-            stones.sort()
-            x, y=stones[-2], stones[-1]
-            if x==y:
-                stones.pop()
-                stones.pop()
-                if len(stones)==0:
-                    stones.append(0)
-            else:
-                stones.pop()
-                stones.pop()
-                stones.append(y-x)
-
-                
+        for i, s in enumerate(stones):
+            stones[i] = -s
+        heapify(stones)
+        while stones:
+            s1 = -heappop(stones)
+            if len(stones)==0:
+                return s1
+            s2=-heappop(stones)         
+            if s1!=s2:
+                heappush(stones, s2-s1)
+        return 0
