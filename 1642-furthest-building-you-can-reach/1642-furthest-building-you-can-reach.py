@@ -9,12 +9,12 @@ class Solution:
         #         bricks -= heights[i + 1] - heights[i]
         #     else:
         #         ladders -= 1
-        jumps_pq = []
+        jumps= []
         for i in range(len(heights) - 1):
-            jump_height = heights[i + 1] - heights[i]
-            if jump_height <= 0: continue
-            heappush(jumps_pq, jump_height)
-            if len(jumps_pq) > ladders:
-                bricks -= heappop(jumps_pq)
+            height = heights[i + 1] - heights[i]
+            if height <= 0: continue
+            heappush(jumps, height)
+            if len(jumps) > ladders:
+                bricks -= heappop(jumps)
             if(bricks < 0) : return i
         return len(heights) - 1
