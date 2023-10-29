@@ -1,15 +1,31 @@
 class Solution:
     def minOperations(self, logs: List[str]) -> int:
-        stk=[]
-        for log in(logs):
-            if  stk and log=="../":
-                stk.pop()
-            elif not stk and log=="../":
-                pass
-            elif log=="./":
-                pass
+        stack=[]
+        for op in logs:
+            if stack and op=="../":
+                stack.pop()
             else:
-                stk.append(log)
-        return len(stk)
+                if op != "./" and op != "../":
+                    stack.append(op)
+        return len(stack)
+        
+        
+        
+        
+        
+        
+        
+        
+        # stk=[]
+        # for log in(logs):
+        #     if  stk and log=="../":
+        #         stk.pop()
+        #     elif not stk and log=="../":
+        #         pass
+        #     elif log=="./":
+        #         pass
+        #     else:
+        #         stk.append(log)
+        # return len(stk)
                 
         
