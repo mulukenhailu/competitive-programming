@@ -21,18 +21,15 @@ class Solution:
             if NewNum%2==0 and preNum%2!=0:
                 ans.append(cur_even_sum+NewNum)
                 cur_even_sum+=NewNum
-                nums[idx]=NewNum
             elif NewNum%2==0 and preNum%2==0:
                 ans.append(cur_even_sum+(NewNum-preNum))
                 cur_even_sum+=(NewNum-preNum)
-                nums[idx]=NewNum
             elif NewNum%2!=0 and preNum%2==0:
                 ans.append(cur_even_sum-preNum)
                 cur_even_sum-=preNum
-                nums[idx]=NewNum
             else:
                 ans.append(cur_even_sum)
-                nums[idx]=NewNum
+            nums[idx]=NewNum
         return ans
             
             
