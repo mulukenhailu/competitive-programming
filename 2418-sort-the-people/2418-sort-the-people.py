@@ -1,19 +1,16 @@
 class Solution:
     def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
-        l=len(heights)
-        dic=defaultdict()
-        for h, n in zip(heights, names):
-            dic[h]=n
-        
-        for i in range(l):
-            for j in range(i+1, l):
-                if heights[i]>heights[j]:
-                    heights[i], heights[j]=heights[j], heights[i]
-    
-        return [dic[h] for h in heights[::-1]]
+        dic={h:n for h, n in zip(heights, names)}
+        arr=[0]*(max(heights)+1)
+        ans=[]
+        for h in heights:
+            pre=arr[h]
+            arr[h]=pre+1
+        for i, v in enumerate(arr):
+            if v !=0:
+                for _ in range(v):
+                    ans.append(i)
+        print(ans)
+        return [dic[h] for h in ans[::-1]]
+                
             
-        
-        
-    
-            
-        
